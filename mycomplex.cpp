@@ -1,10 +1,10 @@
-#include<iostream>
-#include   <cmath>
+#include <iostream>
+#include <cmath>
 #include "mycomplex.h"
 
 using namespace std;
 
-Complex :: Complex (double aRe , double aIm)
+Complex :: Complex (double aRe, double aIm)
 {
     Re = aRe;
     Im = aIm;
@@ -12,8 +12,10 @@ Complex :: Complex (double aRe , double aIm)
 
 Complex :: Complex (const Complex& aRval)
 {
-    Re =aRval.Re; Im=aRval.Im;
+    Re = aRval.Re;
+    Im = aRval.Im;
 }
+
 Complex :: ~Complex()
 {
     Re =0.0;
@@ -25,6 +27,7 @@ void Complex :: Set(double aRe, double aIm)
     Re = aRe;
     Im = aIm;
 }
+
 Complex :: operator double()
 {
     return abs();
@@ -42,6 +45,7 @@ Complex Complex :: operator+ (const Complex& aRval)
     Result.Im = Im + aRval.Im ;
     return Result;
 }
+
 Complex Complex :: operator- (const Complex& aRval)
 {
     Complex Result;
@@ -89,10 +93,10 @@ Complex Complex :: operator/ (const double& aRval)
     return Result;
 }
 
-Complex &Complex :: operator+= (const Complex& arval)
+Complex &Complex :: operator+= (const Complex& aRval)
 {
-    Re += arval.Re;
-    Im += arval.Im;
+    Re += aRval.Re;
+    Im += aRval.Im;
     return *this;
 }
 
@@ -157,7 +161,7 @@ istream & operator >> (istream &stream, Complex& a)
     return stream;
 }
 
-iostream & operator << (iostream &stream, Complex& a)
+ostream & operator << (ostream &stream, Complex& a)
 {
     stream << a.Re;
     if (!(a.Im < 0))
@@ -184,8 +188,8 @@ Complex operator-(const double& aLval, const Complex& aRval)
 
 Complex operator* (const double& aLval, const Complex& a)
 {
-    Complex r;
-    r.Re = aLval * a.Re;
-    r.Im = aLval * a.Im;
-    return r;
+    Complex Result;
+    Result.Re = aLval * a.Re;
+    Result.Im = aLval * a.Im;
+    return Result;
 }
