@@ -176,7 +176,7 @@ Complex &Complex::operator += (const Complex &aRval)
 /**
 \brief Оператор -=
 \param &aRval Комплексное число
-\return Разнсоть
+\return Разность
 */
 Complex &Complex::operator -= (const Complex &aRval)
 {
@@ -188,7 +188,7 @@ Complex &Complex::operator -= (const Complex &aRval)
 /**
 \brief Оператор *=
 \param &aRval Комплексное число
-\return Разность
+\return Произведение
 */
 Complex &Complex::operator *= (const Complex &aRval)
 {
@@ -225,7 +225,7 @@ Complex &Complex::operator -= (const double &aRval)
 \param &aRval Комплексное число
 \return Произведение
 */
-Complex &Complex::operator *= (const  double &aRval)
+Complex &Complex::operator *= (const double &aRval)
 {
     Re *= aRval;
     Im *= aRval;
@@ -233,7 +233,7 @@ Complex &Complex::operator *= (const  double &aRval)
 }
 
 /**
-\brief Оператор *=
+\brief Оператор /=
 \param &aRval Комплексное число
 \return Частное
 */
@@ -271,27 +271,27 @@ Complex &Complex::operator = (const double &aRval)
 /**
 \brief Оператор >>
 \param &aRval Комплексное число
-\return сдвиг право
+\return сдвиг вправо
 */
-istream &operator >> (istream& stream, Complex &a)
+istream &operator >> (istream& stream, Complex &aRval)
 {
     char tmp[256];
-    stream >> a.Re >> a.Im >> tmp;
+    stream >> aRval.Re >> aRval.Im >> tmp;
     return stream;
 }
 
 /**
-\brief Оператор >>
+\brief Оператор <<
 \param &aRval Комплексное число
-\return сдвиг лево
+\return сдвиг влево
 */
-ostream &operator << (ostream& stream, Complex &a)
+ostream &operator << (ostream& stream, Complex &aRval)
 {
-    stream << a.Re;
-    if(!(a.Im < 0))
+    stream << aRval.Re;
+    if(!(aRval.Im < 0))
         {
         stream << '+';
-        stream << a.Im << 'i';
+        stream << aRval.Im << 'i';
         }
     return stream;
 }
@@ -327,10 +327,10 @@ Complex operator - (const double &aLval, const Complex &aRval)
 \param &aRval Комплексное число
 \return Произведение
 */
-Complex operator * (const double &aLval, const Complex &a)
+Complex operator * (const double &aLval, const Complex &aRval)
 {
     Complex Result;
-    Result.Re = aLval * a.Re;
-    Result.Im = aLval * a.Im;
+    Result.Re = aLval * aRval.Re;
+    Result.Im = aLval * aRval.Im;
     return Result;
 }
