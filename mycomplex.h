@@ -26,18 +26,18 @@ class Complex
     double Im;
 
     public:
-        Complex(double aRe = 0, double aIm = 0);
-        Complex(const Complex &);
-        Complex &operator = (const Complex&);
-        Complex &operator = (const double&);
-        Complex &operator += (const Complex&);
-        Complex &operator += (const double&);
-        Complex &operator -= (const Complex&);
-        Complex &operator -= (const double&);
-        Complex &operator *= (const Complex&);
-        Complex &operator *= (const double&);
-        Complex &operator /= (const Complex&);
-        Complex &operator /= (const double&);
+    Complex(double aRe = 0, double aIm = 0);
+    Complex(const Complex &);
+    Complex &operator = (const Complex&);
+    Complex &operator = (const double&);
+    Complex &operator += (const Complex&);
+    Complex &operator += (const double&);
+    Complex &operator -= (const Complex&);
+    Complex &operator -= (const double&);
+    Complex &operator *= (const Complex&);
+    Complex &operator *= (const double&);
+    Complex &operator /= (const Complex&);
+    Complex &operator /= (const double&);
 
     void Set(double aRe, double aIm);
     operator double();
