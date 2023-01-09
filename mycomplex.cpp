@@ -289,10 +289,10 @@ ostream &operator << (ostream& stream, Complex &aRval)
 {
     stream << aRval.Re;
     if(!(aRval.Im < 0))
-        {
+    {
         stream << '+';
         stream << aRval.Im << 'i';
-        }
+    }
     return stream;
 }
 
